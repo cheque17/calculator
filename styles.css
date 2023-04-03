@@ -16,7 +16,6 @@
     display: grid;
     gap: 8px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
 }
 
 #screen {
@@ -33,4 +32,11 @@ button {
     width: 50x;
     height: 50px;
     font-size: 16px;
+}
+
+#equal-botton {
+    border-radius: 35px;
+    grid-column: 4;
+    grid-row: 4 / span 2;
+    height: 105px;
 }
