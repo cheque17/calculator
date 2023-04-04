@@ -1,17 +1,7 @@
-/*
-window.addEventListener('keydown', function (e) {
-    console.log(e.key);
-})
-
-let numberButtons = document.querySelectorAll('.button-number');
-numberButtons.forEach( button => button.addEventListener('click', (number) =>{
-    console.log(number.data-value);
-}))
-*/
-
 let firstNumber='';
 let operator='';
 let secondNumber='';
+let valueDisplayed='';
 
 
 const numberButtons = document.querySelectorAll('.button-number');
@@ -20,9 +10,14 @@ const operatorButtons = document.querySelectorAll('.button-operator');
 const equalButton = document.querySelector('#equal-botton');
 const clearButton = document.querySelector('#clear');
 const deleteButton = document.querySelector('#delete');
+const screenDisplay = document.querySelector('#screen');
 
-console.log (numberButtons);
-console.log(operatorButtons);
+numberButtons.forEach((button) => {
+    button.addEventListener('click', e => {
+        console.log(button.textContent);
+    })
+})
+
 
 function add(a,b) {
     return a + b;
@@ -51,3 +46,5 @@ function operate(firstOperand, sign, secondOperand) {
         return divide(firstOperand, secondOperand);
     }
 }
+
+
