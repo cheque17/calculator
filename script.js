@@ -14,6 +14,16 @@ let operator='';
 let secondNumber='';
 
 
+const numberButtons = document.querySelectorAll('.button-number');
+const startButton = document.querySelector('#start');
+const operatorButtons = document.querySelectorAll('.button-operator');
+const equalButton = document.querySelector('#equal-botton');
+const clearButton = document.querySelector('#clear');
+const deleteButton = document.querySelector('#delete');
+
+console.log (numberButtons);
+console.log(operatorButtons);
+
 function add(a,b) {
     return a + b;
 }
