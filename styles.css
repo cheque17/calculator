@@ -27,6 +27,14 @@
     margin-bottom: 15px;
 }
 
+#work-screen,
+#user-input-screen {
+    height: 88px;
+    width: 175px;
+}
+
+
+
 button {
     border-width: 1px;
     padding: 0;

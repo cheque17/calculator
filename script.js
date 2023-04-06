@@ -1,16 +1,19 @@
 let firstNumber='';
 let operator='';
 let secondNumber='';
-let displayValue='0';
+let inputDisplayValue='0';
+let calcWorkingValue;
 
 
 const numberButtons = document.querySelectorAll('.button-number');
-const startButton = document.querySelector('#start');
 const operatorButtons = document.querySelectorAll('.button-operator');
+const startButton = document.querySelector('#start');
 const equalButton = document.querySelector('#equal-botton');
 const clearButton = document.querySelector('#clear');
 const deleteButton = document.querySelector('#delete');
 const screenDisplay = document.querySelector('#screen');
+const userInputScreen = document.querySelector('#user-input-screen');
+const workScreen = document.querySelector('#work-screen');
 
 
 function add(a,b) {
@@ -41,25 +44,34 @@ function operate(firstOperand, sign, secondOperand) {
     }
 }
 
-function showOnScreen(){
-    screenDisplay.textContent = displayValue;
+function showOnScreen(screenToBeUsed, valueDisplayed){
+    screenToBeUsed.textContent = valueDisplayed;
 }
 
 
 
 numberButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
-        console.log(displayValue);
+        console.log(inputDisplayValue);
         console.log(event.target.textContent);
-        if (displayValue == 0) {
-            displayValue = event.target.textContent;
-        } else if (displayValue != 0) {
-            displayValue += event.target.textContent
+        if (inputDisplayValue == 0) {
+            inputDisplayValue = event.target.textContent;
+        } else if (inputDisplayValue != 0) {
+            inputDisplayValue += event.target.textContent
         }
-        showOnScreen();        
+        showOnScreen(userInputScreen, inputDisplayValue);        
     });
 })
 
+operatorButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        firstNumber = inputDisplayValue;
+        console.log(firstNumber);
+        operator = event.target.textContent;
+        calcWorkingValue = inputDisplayValue + ' ' + event.target.textContent;
+        showOnScreen(workScreen, calcWorkingValue);
+    })
+})
 
 /*
 
