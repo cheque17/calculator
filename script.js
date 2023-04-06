@@ -1,21 +1,25 @@
+//Variables to keep 
 let firstNumber='';
 let operator='';
 let secondNumber='';
 let inputDisplayValue='0';
 let calcWorkingValue;
 
-
+//Buttons on the calculator
 const numberButtons = document.querySelectorAll('.button-number');
 const operatorButtons = document.querySelectorAll('.button-operator');
-const startButton = document.querySelector('#start');
 const equalButton = document.querySelector('#equal-botton');
+const startButton = document.querySelector('#start');
 const clearButton = document.querySelector('#clear');
 const deleteButton = document.querySelector('#delete');
+
+//Screen
 const screenDisplay = document.querySelector('#screen');
 const userInputScreen = document.querySelector('#user-input-screen');
 const workScreen = document.querySelector('#work-screen');
 
 
+//Mathematical operations
 function add(a,b) {
     return a + b;
 }
@@ -31,6 +35,7 @@ function multiply(a,b) {
 function divide(a,b) {
     return a / b;
 }
+
 
 function operate(firstOperand, sign, secondOperand) {
     if (sign == '+') {
@@ -70,6 +75,7 @@ operatorButtons.forEach((button) => {
         operator = event.target.textContent;
         calcWorkingValue = inputDisplayValue + ' ' + event.target.textContent;
         showOnScreen(workScreen, calcWorkingValue);
+        inputDisplayValue = '0';
     })
 })
 
