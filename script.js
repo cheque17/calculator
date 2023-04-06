@@ -1,7 +1,7 @@
 let firstNumber='';
 let operator='';
 let secondNumber='';
-let valueDisplayed='';
+let displayValue='0';
 
 
 const numberButtons = document.querySelectorAll('.button-number');
@@ -11,12 +11,6 @@ const equalButton = document.querySelector('#equal-botton');
 const clearButton = document.querySelector('#clear');
 const deleteButton = document.querySelector('#delete');
 const screenDisplay = document.querySelector('#screen');
-
-numberButtons.forEach((button) => {
-    button.addEventListener('click', e => {
-        console.log(button.textContent);
-    })
-})
 
 
 function add(a,b) {
@@ -47,4 +41,37 @@ function operate(firstOperand, sign, secondOperand) {
     }
 }
 
+function showOnScreen(){
+    screenDisplay.textContent = displayValue;
+}
+
+
+
+numberButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        console.log(displayValue);
+        console.log(event.target.textContent);
+        if (displayValue == 0) {
+            displayValue = event.target.textContent;
+        } else if (displayValue != 0) {
+            displayValue += event.target.textContent
+        }
+        showOnScreen();        
+    });
+})
+
+
+/*
+
+ numberButtons.forEach((button) => {
+    button.addEventListener('click', e => {
+        console.log(button.textContent);
+    })
+})
+
+function enterValue(button) {
+    screenDisplay.textContent = button.textContent;
+}
+
+*/
 
