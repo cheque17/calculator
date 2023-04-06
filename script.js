@@ -21,7 +21,7 @@ const workScreen = document.querySelector('#work-screen');
 
 //Mathematical operations
 function add(a,b) {
-    return a + b;
+    return parseFloat(a) + parseFloat(b);
 }
 
 function substract(a,b) {
@@ -77,6 +77,11 @@ operatorButtons.forEach((button) => {
         showOnScreen(workScreen, calcWorkingValue);
         inputDisplayValue = '0';
     })
+})
+
+equalButton.addEventListener('click', (button) => {
+    secondNumber=inputDisplayValue;
+    workScreen.textContent = operate(firstNumber, operator, secondNumber);
 })
 
 /*
