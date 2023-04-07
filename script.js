@@ -20,7 +20,7 @@ const userInputScreen = document.querySelector('#user-input-screen');
 const workScreen = document.querySelector('#work-screen');
 
 
-//Mathematical operations
+//Mathematical operations and operation selector function
 function add(a,b) {
     return parseFloat(a) + parseFloat(b);
 }
@@ -55,6 +55,8 @@ function showOnScreen(screenToBeUsed, valueDisplayed){
 }
 
 
+
+//Event listeners
 numberButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
         if (inputDisplayValue == '0') {
