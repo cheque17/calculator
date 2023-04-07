@@ -54,11 +54,8 @@ function showOnScreen(screenToBeUsed, valueDisplayed){
 }
 
 
-
 numberButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
-        console.log(inputDisplayValue);
-        console.log(event.target.textContent);
         if (inputDisplayValue == 0) {
             inputDisplayValue = event.target.textContent;
         } else if (inputDisplayValue != 0) {
@@ -71,7 +68,6 @@ numberButtons.forEach((button) => {
 operatorButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
         firstNumber = inputDisplayValue;
-        console.log(firstNumber);
         operator = event.target.textContent;
         calcWorkingValue = inputDisplayValue + ' ' + event.target.textContent;
         showOnScreen(workScreen, calcWorkingValue);
