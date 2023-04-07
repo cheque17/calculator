@@ -50,10 +50,10 @@ function operate(firstOperand, sign, secondOperand) {
     }
 }
 
+
 function showOnScreen(screenToBeUsed, valueDisplayed){
     screenToBeUsed.textContent = valueDisplayed;
 }
-
 
 
 //Event listeners
