@@ -3,16 +3,17 @@ let firstNumber='';
 let operator='';
 let secondNumber='';
 let inputDisplayValue='0';
-let calcWorkingValue;
+let calcWorkingValue='';
 
 //Buttons on the calculator
 const numberButtons = document.querySelectorAll('.button-number');
 const operatorButtons = document.querySelectorAll('.button-operator');
 const equalButton = document.querySelector('#equal-botton');
 const dotButton = document.querySelector('.dot-button');
-const startButton = document.querySelector('#start');
 const clearButton = document.querySelector('#clear');
 const deleteButton = document.querySelector('#delete');
+const startButton = document.querySelector('#start');
+
 
 //Screen
 const screenDisplay = document.querySelector('#screen');
@@ -90,6 +91,15 @@ equalButton.addEventListener('click', (button) => {
 dotButton.addEventListener('click', (button) => {
     inputDisplayValue += '.';
     showOnScreen(userInputScreen, inputDisplayValue);    
+})
+
+clearButton.addEventListener('click', (button) => {
+    firstNumber='';
+    operator='';
+    secondNumber='';
+    inputDisplayValue='0';
+    showOnScreen(userInputScreen, inputDisplayValue);
+    workScreen.textContent='';
 })
 
 /*
