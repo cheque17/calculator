@@ -9,6 +9,7 @@ let calcWorkingValue;
 const numberButtons = document.querySelectorAll('.button-number');
 const operatorButtons = document.querySelectorAll('.button-operator');
 const equalButton = document.querySelector('#equal-botton');
+const dotButton = document.querySelector('.dot-button');
 const startButton = document.querySelector('#start');
 const clearButton = document.querySelector('#clear');
 const deleteButton = document.querySelector('#delete');
@@ -56,9 +57,9 @@ function showOnScreen(screenToBeUsed, valueDisplayed){
 
 numberButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
-        if (inputDisplayValue == 0) {
+        if (inputDisplayValue == '0') {
             inputDisplayValue = event.target.textContent;
-        } else if (inputDisplayValue != 0) {
+        } else if (inputDisplayValue != '0') {
             inputDisplayValue += event.target.textContent
         }
         showOnScreen(userInputScreen, inputDisplayValue);        
@@ -77,7 +78,16 @@ operatorButtons.forEach((button) => {
 
 equalButton.addEventListener('click', (button) => {
     secondNumber=inputDisplayValue;
-    workScreen.textContent = operate(firstNumber, operator, secondNumber);
+    calcWorkingValue += ' ' + inputDisplayValue; 
+    showOnScreen(workScreen, calcWorkingValue);
+    inputDisplayValue= operate(firstNumber, operator, secondNumber);
+    showOnScreen(userInputScreen, inputDisplayValue);    
+})
+
+
+dotButton.addEventListener('click', (button) => {
+    inputDisplayValue += '.';
+    showOnScreen(userInputScreen, inputDisplayValue);    
 })
 
 /*
