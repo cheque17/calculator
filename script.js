@@ -24,19 +24,23 @@ const workScreen = document.querySelector('#work-screen');
 
 //Mathematical operations and operation selector function
 function add(a,b) {
-	return parseFloat(a) + parseFloat(b);
+	let result = parseFloat(a) + parseFloat(b);
+	return result.toFixed(2)
 }
 
 function substract(a,b) {
-	return a - b;
+	let result = a - b;
+	return result.toFixed(2)
 }
 
 function multiply(a,b) {
-	return a * b;
+	let result = a * b;
+	return result.toFixed(2)
 }
 
 function divide(a,b) {
-	return a / b;
+	let result = a / b;
+	return result.toFixed(2)
 }
 
 
