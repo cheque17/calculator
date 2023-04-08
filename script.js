@@ -25,22 +25,25 @@ const workScreen = document.querySelector('#work-screen');
 //Mathematical operations and operation selector function
 function add(a,b) {
 	let result = parseFloat(a) + parseFloat(b);
-	return result.toFixed(2)
+	return Math.round(result * 100) / 100;
 }
 
 function substract(a,b) {
 	let result = a - b;
-	return result.toFixed(2)
+	return Math.round(result * 100) / 100;
 }
 
 function multiply(a,b) {
 	let result = a * b;
-	return result.toFixed(2)
+	return Math.round(result * 100) / 100;
 }
 
 function divide(a,b) {
+	if (b==0) {
+		return "ERROR"
+	}
 	let result = a / b;
-	return result.toFixed(2)
+	return Math.round(result * 100) / 100;
 }
 
 
@@ -122,6 +125,9 @@ equalButton.addEventListener('click', (button) => {
 
 
 dotButton.addEventListener('click', (button) => {
+	if (inputDisplayValue.includes('.')) {
+		return
+	}
 	inputDisplayValue += '.';
 	showOnScreen(userInputScreen, inputDisplayValue);    
 })
