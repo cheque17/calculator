@@ -99,7 +99,18 @@ clearButton.addEventListener('click', (button) => {
     secondNumber='';
     inputDisplayValue='0';
     showOnScreen(userInputScreen, inputDisplayValue);
-    workScreen.textContent='';
+    calcWorkingValue='';
+    showOnScreen(workScreen, calcWorkingValue);
+})
+
+
+
+deleteButton.addEventListener('click', button => {
+    let wordLength = inputDisplayValue.length;
+    inputDisplayValue = inputDisplayValue.substring(0, (wordLength-1))
+    console.log(wordLength);
+    console.log(inputDisplayValue);
+    showOnScreen(userInputScreen, inputDisplayValue);
 })
 
 /*
