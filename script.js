@@ -113,17 +113,3 @@ deleteButton.addEventListener('click', button => {
     showOnScreen(userInputScreen, inputDisplayValue);
 })
 
-/*
-
- numberButtons.forEach((button) => {
-    button.addEventListener('click', e => {
-        console.log(button.textContent);
-    })
-})
-
-function enterValue(button) {
-    screenDisplay.textContent = button.textContent;
-}
-
-*/
-
