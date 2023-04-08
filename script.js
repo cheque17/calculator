@@ -108,8 +108,6 @@ clearButton.addEventListener('click', (button) => {
 deleteButton.addEventListener('click', button => {
     let wordLength = inputDisplayValue.length;
     inputDisplayValue = inputDisplayValue.substring(0, (wordLength-1))
-    console.log(wordLength);
-    console.log(inputDisplayValue);
     showOnScreen(userInputScreen, inputDisplayValue);
 })
 

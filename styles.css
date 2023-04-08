@@ -4,6 +4,7 @@
 }
 
 #calculator { 
+    background-color: rgb(163, 175, 171);
     border: 3px solid black; 
     border-radius: 15px;   
     height: 500px;
@@ -19,34 +20,53 @@
 }
 
 #screen {
+    background-color: rgb(104, 221, 93);
     box-sizing: border-box;
     border: 1px solid black;
     padding: 12px;
     width: 374px;
-    height: 200px;
-    margin-bottom: 15px;
+    height: 100px;
+    margin-bottom: 60px;
+    font-size: 35px;
 }
 
 #work-screen,
 #user-input-screen {
-    height: 88px;
+    height: 44px;
     width: 175px;
 }
 
 
 
 button {
-    border-width: 1px;
+    border-color: rgb(243, 13, 13);
+    border-style: solid;
+    border-width: 3px;
     padding: 0;
     border-radius: 50px;
     width: 50x;
-    height: 50px;
-    font-size: 16px;
+    height: 55px;
+    font-size: 20px;
 }
 
 #equal-botton {
+    background-color: orange;
     border-radius: 35px;
     grid-column: 4;
     grid-row: 4 / span 2;
     height: 105px;
+}
+
+.button-number {
+    background-color: hsl(199, 100%, 68%);
+}
+
+.button-operator {
+    background-color: darksalmon;
+}
+
+#clear,
+#delete {
+    background-color: darkblue;
+    color: yellow;
 }
