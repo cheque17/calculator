@@ -33,7 +33,8 @@
 #work-screen,
 #user-input-screen {
     height: 44px;
-    width: 175px;
+    width: 350px;
+    text-align: end;
 }
 
 
