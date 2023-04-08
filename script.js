@@ -4,6 +4,7 @@ let operator='';
 let secondNumber='';
 let inputDisplayValue='0';
 let calcWorkingValue='';
+let equalButtonCounter= 0;
 
 //Buttons on the calculator
 const numberButtons = document.querySelectorAll('.button-number');
@@ -65,26 +66,33 @@ numberButtons.forEach((button) => {
         } else if (inputDisplayValue != '0') {
             inputDisplayValue += event.target.textContent
         }
+        equalButtonCounter = 0;
         showOnScreen(userInputScreen, inputDisplayValue);        
     });
 })
 
 operatorButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
+        equalButtonCounter += 1;
         firstNumber = inputDisplayValue;
         operator = event.target.textContent;
         calcWorkingValue = inputDisplayValue + ' ' + event.target.textContent;
         showOnScreen(workScreen, calcWorkingValue);
         inputDisplayValue = '0';
+        showOnScreen(userInputScreen, inputDisplayValue);
     })
 })
 
 equalButton.addEventListener('click', (button) => {
+    if (!firstNumber || equalButtonCounter) {
+        return
+    } 
+    equalButtonCounter +=1;
     secondNumber=inputDisplayValue;
     calcWorkingValue += ' ' + inputDisplayValue; 
     showOnScreen(workScreen, calcWorkingValue);
     inputDisplayValue= operate(firstNumber, operator, secondNumber);
-    showOnScreen(userInputScreen, inputDisplayValue);    
+    showOnScreen(userInputScreen, inputDisplayValue);        
 })
 
 
@@ -94,6 +102,7 @@ dotButton.addEventListener('click', (button) => {
 })
 
 clearButton.addEventListener('click', (button) => {
+    equalButtonCounter=0;
     firstNumber='';
     operator='';
     secondNumber='';
